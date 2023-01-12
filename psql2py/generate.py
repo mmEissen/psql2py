@@ -14,6 +14,7 @@ import shutil
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from psql2py import inspect
+import traceback
 
 SQL_EXTENSION = ".sql"
 COLUMNS = "\nCOLUMNS:\n"
@@ -29,7 +30,10 @@ class SqlDirChangeEventHandler(FileSystemEventHandler):
         self.target_dir = target_dir
 
     def on_any_event(self, event: object) -> None:
-        package_from_dir(self.root_dir, self.target_dir)
+        try:
+            package_from_dir(self.root_dir, self.target_dir)
+        except Exception:
+            traceback.print_exc()
 
 
 def package_from_dir_continuous(dirname: str, output_path: str) -> None:
@@ -81,7 +85,7 @@ def package_from_statement_dir(statement_dir: StatementDir, output_path: str) ->
 
 def package_from_dir(dirname: str, output_path: str) -> None:
     statement_dir = load_dir(dirname)
-    shutil.rmtree(output_path)
+    #shutil.rmtree(path.join(output_path, statement_dir.name))
     package_from_statement_dir(statement_dir, output_path)
 
 
