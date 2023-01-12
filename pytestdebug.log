@@ -1,0 +1,883 @@
+versions pytest-7.2.0, python-3.11.0.final.0
+cwd=/Users/momo/psql2py
+args=('tests/test_generate.py::test_lookup_column_name', '--debug')
+
+  pytest_cmdline_main [hook]
+      config: <_pytest.config.Config object at 0x103b00f90>
+    pytest_plugin_registered [hook]
+        plugin: <Session psql2py exitstatus='<UNSET>' testsfailed=0 testscollected=0>
+        manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+    finish pytest_plugin_registered --> [] [hook]
+    pytest_configure [hook]
+        config: <_pytest.config.Config object at 0x103b00f90>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x1043d2ad0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x1043d2fd0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: faulthandler [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+    early skip of rewriting module: pdb [assertion]
+    early skip of rewriting module: cmd [assertion]
+    early skip of rewriting module: code [assertion]
+    early skip of rewriting module: codeop [assertion]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x103952010>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x103b00f90>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/mark/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/main.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/runner.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/fixtures.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/helpconfig.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/python.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/terminal.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/debugging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/unittest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/capture.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/skipping.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/legacypath.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/tmpdir.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/monkeypatch.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/recwarn.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/pastebin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.nose' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/nose.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/assertion/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/junitxml.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/doctest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/cacheprovider.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/freeze_support.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/setuponly.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/setupplan.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/stepwise.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/warnings.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/logging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/reports.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python_path' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/python_path.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/unraisableexception.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/threadexception.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/faulthandler.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pg_docker._plugin' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/pg_docker/_plugin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'snapshottest.pytest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/snapshottest/pytest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=6 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=8 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='/dev/null' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'conftest' from '/Users/momo/psql2py/tests/conftest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x1043d2ad0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x1043d2fd0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x1043d3a50>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x1043cc2d0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+    finish pytest_configure --> [] [hook]
+    pytest_sessionstart [hook]
+        session: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.PytestPluginManager object at 0x103952010>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.config.Config object at 0x103b00f90>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.mark' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/mark/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.main' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/main.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.runner' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/runner.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.fixtures' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/fixtures.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.helpconfig' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/helpconfig.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/python.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.terminal' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/terminal.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.debugging' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/debugging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unittest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/unittest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.capture' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/capture.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.skipping' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/skipping.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.legacypath' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/legacypath.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.tmpdir' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/tmpdir.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.monkeypatch' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/monkeypatch.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.recwarn' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/recwarn.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.pastebin' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/pastebin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.nose' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/nose.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.assertion' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/assertion/__init__.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.junitxml' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/junitxml.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.doctest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/doctest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.cacheprovider' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/cacheprovider.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.freeze_support' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/freeze_support.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setuponly' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/setuponly.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.setupplan' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/setupplan.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.stepwise' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/stepwise.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.warnings' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/warnings.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.logging' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/logging.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.reports' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/reports.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.python_path' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/python_path.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.unraisableexception' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/unraisableexception.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.threadexception' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/threadexception.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module '_pytest.faulthandler' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/faulthandler.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'pg_docker._plugin' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/pg_docker/_plugin.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'snapshottest.pytest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/snapshottest/pytest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=5 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=6 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> err=<FDCapture 2 oldfd=7 _state='suspended' tmpfile=<_io.TextIOWrapper name="<_io.FileIO name=8 mode='rb+' closefd=True>" mode='r+' encoding='utf-8'>> in_=<FDCapture 0 oldfd=3 _state='started' tmpfile=<_io.TextIOWrapper name='/dev/null' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <module 'conftest' from '/Users/momo/psql2py/tests/conftest.py'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.LFPlugin object at 0x1043d2ad0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.cacheprovider.NFPlugin object at 0x1043d2fd0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <class '_pytest.legacypath.LegacyTmpdirPlugin'>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.terminal.TerminalReporter object at 0x1043d3a50>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.logging.LoggingPlugin object at 0x1043cc2d0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_plugin_registered [hook]
+          plugin: <_pytest.fixtures.FixtureManager object at 0x1043ce3d0>
+          manager: <_pytest.config.PytestPluginManager object at 0x103952010>
+      finish pytest_plugin_registered --> [] [hook]
+      pytest_report_header [hook]
+          config: <_pytest.config.Config object at 0x103b00f90>
+          start_path: /Users/momo/psql2py
+          startdir: /Users/momo/psql2py
+      early skip of rewriting module: email.parser [assertion]
+      early skip of rewriting module: email.feedparser [assertion]
+      finish pytest_report_header --> [['rootdir: /Users/momo/psql2py', 'plugins: pg-docker-0.5.0, snapshottest-0.6.0'], ['using: pytest-7.2.0', 'setuptools registered plugins:', '  pg-docker-0.5.0 at /Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/pg_docker/_plugin.py', '  snapshottest-0.6.0 at /Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/snapshottest/pytest.py']] [hook]
+    finish pytest_sessionstart --> [] [hook]
+    pytest_collection [hook]
+        session: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+    perform_collect <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0> ['tests/test_generate.py::test_lookup_column_name'] [collection]
+        pytest_collectstart [hook]
+            collector: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        finish pytest_collectstart --> [] [hook]
+        pytest_make_collect_report [hook]
+            collector: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        processing argument (PosixPath('/Users/momo/psql2py/tests/test_generate.py'), ['test_lookup_column_name']) [collection]
+            pytest_collect_file [hook]
+                parent: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+                file_path: /Users/momo/psql2py/tests/test_generate.py
+                path: /Users/momo/psql2py/tests/test_generate.py
+              pytest_pycollect_makemodule [hook]
+                  parent: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+                  module_path: /Users/momo/psql2py/tests/test_generate.py
+                  path: /Users/momo/psql2py/tests/test_generate.py
+              finish pytest_pycollect_makemodule --> <Module tests/test_generate.py> [hook]
+            finish pytest_collect_file --> [<Module tests/test_generate.py>] [hook]
+          matchnodes [<Module tests/test_generate.py>] ['test_lookup_column_name'] [collection]
+              pytest_collectstart [hook]
+                  collector: <Module tests/test_generate.py>
+              finish pytest_collectstart --> [] [hook]
+              pytest_make_collect_report [hook]
+                  collector: <Module tests/test_generate.py>
+              find_module called for: test_generate [assertion]
+              matched test file (was specified on cmdline): '/Users/momo/psql2py/tests/test_generate.py' [assertion]
+              found cached rewritten pyc for /Users/momo/psql2py/tests/test_generate.py [assertion]
+              early skip of rewriting module: psql2py [assertion]
+              early skip of rewriting module: psql2py.generate [assertion]
+              early skip of rewriting module: sqlparse [assertion]
+              early skip of rewriting module: sqlparse.sql [assertion]
+              early skip of rewriting module: sqlparse.tokens [assertion]
+              early skip of rewriting module: sqlparse.utils [assertion]
+              early skip of rewriting module: sqlparse.cli [assertion]
+              early skip of rewriting module: sqlparse.exceptions [assertion]
+              early skip of rewriting module: sqlparse.engine [assertion]
+              early skip of rewriting module: sqlparse.engine.grouping [assertion]
+              early skip of rewriting module: sqlparse.engine.filter_stack [assertion]
+              early skip of rewriting module: sqlparse.lexer [assertion]
+              early skip of rewriting module: sqlparse.keywords [assertion]
+              early skip of rewriting module: sqlparse.engine.statement_splitter [assertion]
+              early skip of rewriting module: sqlparse.filters [assertion]
+              early skip of rewriting module: sqlparse.filters.others [assertion]
+              early skip of rewriting module: sqlparse.filters.output [assertion]
+              early skip of rewriting module: sqlparse.filters.tokens [assertion]
+              early skip of rewriting module: sqlparse.filters.reindent [assertion]
+              early skip of rewriting module: sqlparse.filters.right_margin [assertion]
+              early skip of rewriting module: sqlparse.filters.aligned_indent [assertion]
+              early skip of rewriting module: sqlparse.formatter [assertion]
+              early skip of rewriting module: psql2py.inspect [assertion]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: @py_builtins
+                    obj: <module 'builtins' (built-in)>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: @pytest_ar
+                    obj: <module '_pytest.assertion.rewrite' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/_pytest/assertion/rewrite.py'>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: generate
+                    obj: <module 'psql2py.generate' from '/Users/momo/psql2py/psql2py/generate.py'>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: inspect
+                    obj: <module 'psql2py.inspect' from '/Users/momo/psql2py/psql2py/inspect.py'>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: pytest
+                    obj: <module 'pytest' from '/Users/momo/Library/Caches/pypoetry/virtualenvs/psql2py-Kl5-Nv_L-py3.11/lib/python3.11/site-packages/pytest/__init__.py'>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: database_schema
+                    obj: <function database_schema at 0x10441fc40>
+                finish pytest_pycollect_makeitem --> None [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: test_function_from_statement
+                    obj: <function test_function_from_statement at 0x1044816c0>
+                  pytest_generate_tests [hook]
+                      metafunc: <_pytest.python.Metafunc object at 0x104489ad0>
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: SELECT name FROM users;
+                        argname: statement
+                    finish pytest_make_parametrize_id --> None [hook]
+                  early skip of rewriting module: encodings.unicode_escape [assertion]
+                  finish pytest_generate_tests --> [] [hook]
+                finish pytest_pycollect_makeitem --> [<Function test_function_from_statement[SELECT name FROM users;]>] [hook]
+                pytest_pycollect_makeitem [hook]
+                    collector: <Module tests/test_generate.py>
+                    name: test_lookup_column_name
+                    obj: <function test_lookup_column_name at 0x104481620>
+                  pytest_generate_tests [hook]
+                      metafunc: <_pytest.python.Metafunc object at 0x104489f90>
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: 
+            SELECT hero_id FROM hero
+            
+                        argname: statement
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: name
+                        argname: name
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: public.hero.name
+                        argname: result_fqn
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: text
+                        argname: result_type
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: 
+            SELECT * FROM kingdom WHERE name = "Candy Kingdom"
+            
+                        argname: statement
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: name
+                        argname: name
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: public.kingdom.name
+                        argname: result_fqn
+                    finish pytest_make_parametrize_id --> None [hook]
+                    pytest_make_parametrize_id [hook]
+                        config: <_pytest.config.Config object at 0x103b00f90>
+                        val: text
+                        argname: result_type
+                    finish pytest_make_parametrize_id --> None [hook]
+                  finish pytest_generate_tests --> [] [hook]
+                finish pytest_pycollect_makeitem --> [<Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>, <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>] [hook]
+              finish pytest_make_collect_report --> <CollectReport 'tests/test_generate.py' lenresult=3 outcome='passed'> [hook]
+            matchnodes finished ->  0 nodes [collection]
+          matchnodes [<Module tests/test_generate.py>] ['test_lookup_column_name'] [collection]
+            matchnodes finished ->  2 nodes [collection]
+        finish pytest_make_collect_report --> <CollectReport '' lenresult=2 outcome='passed'> [hook]
+        pytest_collectreport [hook]
+            report: <CollectReport '' lenresult=2 outcome='passed'>
+        finish pytest_collectreport --> [] [hook]
+    genitems <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+      finish pytest_itemcollected --> [] [hook]
+    genitems <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]> [collection]
+      pytest_itemcollected [hook]
+          item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+      finish pytest_itemcollected --> [] [hook]
+      pytest_collection_modifyitems [hook]
+          session: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+          config: <_pytest.config.Config object at 0x103b00f90>
+          items: [<Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>, <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>]
+      finish pytest_collection_modifyitems --> [] [hook]
+      pytest_collection_finish [hook]
+          session: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=0>
+        pytest_report_collectionfinish [hook]
+            config: <_pytest.config.Config object at 0x103b00f90>
+            items: [<Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>, <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>]
+            start_path: /Users/momo/psql2py
+            startdir: /Users/momo/psql2py
+        finish pytest_report_collectionfinish --> [] [hook]
+      finish pytest_collection_finish --> [] [hook]
+    finish pytest_collection --> None [hook]
+    pytest_runtestloop [hook]
+        session: <Session psql2py exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=2>
+      pytest_runtest_protocol [hook]
+          item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+          nextitem: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+        pytest_runtest_logstart [hook]
+            nodeid: tests/test_generate.py::test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]
+            location: ('tests/test_generate.py', 21, 'test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='pg_setup_db' scope='session' baseid='tests'>
+              request: <SubRequest 'pg_setup_db' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> <function setup_db at 0x1043bf060> [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='pg_database_pool' scope='session' baseid=''>
+              request: <SubRequest 'pg_database_pool' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          early skip of rewriting module: multiprocessing.queues [assertion]
+          early skip of rewriting module: _multiprocessing [assertion]
+          early skip of rewriting module: multiprocessing.connection [assertion]
+          early skip of rewriting module: multiprocessing.util [assertion]
+          early skip of rewriting module: _winapi [assertion]
+          early skip of rewriting module: multiprocessing.synchronize [assertion]
+          early skip of rewriting module: multiprocessing.resource_tracker [assertion]
+          early skip of rewriting module: multiprocessing.spawn [assertion]
+          early skip of rewriting module: runpy [assertion]
+          early skip of rewriting module: _posixshmem [assertion]
+          early skip of rewriting module: multiprocessing.popen_spawn_posix [assertion]
+          early skip of rewriting module: multiprocessing.popen_fork [assertion]
+          finish pytest_fixture_setup --> DatabasePool(root_params=DatabaseParams(host='0.0.0.0', port=65210, dbname='postgres', user='postgres', password='password'), max_pool_size=10, setup_db=<function setup_db at 0x1043bf060>) [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> DatabaseParams(host='0.0.0.0', port=65210, dbname='__test_db_1', user='__test_user_1', password='password') [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> Database(schemas={'public': Schema(name='public', tables={'hero': Table(name='hero', columns={'companion': Column(name='companion', postgres_type='bigint', is_nullable=True), 'hero_id': Column(name='hero_id', postgres_type='bigint', is_nullable=False), 'name': Column(name='name', postgres_type='text', is_nullable=False)}), 'kingdom': Table(name='kingdom', columns={'kingdom_id': Column(name='kingdom_id', postgres_type='bigint', is_nullable=False), 'name': Column(name='name', postgres_type='text', is_nullable=False), 'ruler': Column(name='ruler', postgres_type='bigint', is_nullable=True)})})}) [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='statement' scope='function' baseid=''>
+              request: <SubRequest 'statement' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> 
+            SELECT hero_id FROM hero
+             [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='name' scope='function' baseid=''>
+              request: <SubRequest 'name' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> name [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='result_fqn' scope='function' baseid=''>
+              request: <SubRequest 'result_fqn' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> public.hero.name [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='result_type' scope='function' baseid=''>
+              request: <SubRequest 'result_type' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_setup --> text [hook]
+        finish pytest_runtest_setup --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+            call: <CallInfo when='setup' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo NameLookupError() tblen=26>>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='call' outcome='failed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='call' outcome='failed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='call' outcome='failed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_exception_interact [hook]
+            node: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo NameLookupError() tblen=2>>
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='call' outcome='failed'>
+        finish pytest_exception_interact --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+            nextitem: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='result_type' scope='function' baseid=''>
+              request: <SubRequest 'result_type' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='result_fqn' scope='function' baseid=''>
+              request: <SubRequest 'result_fqn' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='name' scope='function' baseid=''>
+              request: <SubRequest 'name' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='statement' scope='function' baseid=''>
+              request: <SubRequest 'statement' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+        finish pytest_runtest_teardown --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>
+            call: <CallInfo when='teardown' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: tests/test_generate.py::test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]
+            location: ('tests/test_generate.py', 21, 'test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+      pytest_runtest_protocol [hook]
+          item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+          nextitem: None
+        pytest_runtest_logstart [hook]
+            nodeid: tests/test_generate.py::test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]
+            location: ('tests/test_generate.py', 21, 'test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]')
+        finish pytest_runtest_logstart --> [] [hook]
+        pytest_runtest_setup [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> DatabaseParams(host='0.0.0.0', port=65210, dbname='__test_db_2', user='__test_user_2', password='password') [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> Database(schemas={'public': Schema(name='public', tables={'hero': Table(name='hero', columns={'companion': Column(name='companion', postgres_type='bigint', is_nullable=True), 'hero_id': Column(name='hero_id', postgres_type='bigint', is_nullable=False), 'name': Column(name='name', postgres_type='text', is_nullable=False)}), 'kingdom': Table(name='kingdom', columns={'kingdom_id': Column(name='kingdom_id', postgres_type='bigint', is_nullable=False), 'name': Column(name='name', postgres_type='text', is_nullable=False), 'ruler': Column(name='ruler', postgres_type='bigint', is_nullable=True)})})}) [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='statement' scope='function' baseid=''>
+              request: <SubRequest 'statement' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> 
+            SELECT * FROM kingdom WHERE name = "Candy Kingdom"
+             [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='name' scope='function' baseid=''>
+              request: <SubRequest 'name' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> name [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='result_fqn' scope='function' baseid=''>
+              request: <SubRequest 'result_fqn' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> public.kingdom.name [hook]
+          pytest_fixture_setup [hook]
+              fixturedef: <FixtureDef argname='result_type' scope='function' baseid=''>
+              request: <SubRequest 'result_type' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_setup --> text [hook]
+        finish pytest_runtest_setup --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+            call: <CallInfo when='setup' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='setup' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='setup' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='setup' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_call [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+          pytest_pyfunc_call [hook]
+              pyfuncitem: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo NameLookupError() tblen=26>>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='call' outcome='failed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='call' outcome='failed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='call' outcome='failed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_exception_interact [hook]
+            node: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+            call: <CallInfo when='call' excinfo=<ExceptionInfo NameLookupError() tblen=2>>
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='call' outcome='failed'>
+        finish pytest_exception_interact --> [] [hook]
+        pytest_runtest_teardown [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+            nextitem: None
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='result_type' scope='function' baseid=''>
+              request: <SubRequest 'result_type' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='result_fqn' scope='function' baseid=''>
+              request: <SubRequest 'result_fqn' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='name' scope='function' baseid=''>
+              request: <SubRequest 'name' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='statement' scope='function' baseid=''>
+              request: <SubRequest 'statement' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='database_schema' scope='function' baseid='tests/test_generate.py'>
+              request: <SubRequest 'database_schema' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database' scope='function' baseid=''>
+              request: <SubRequest 'pg_database' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database_pool' scope='session' baseid=''>
+              request: <SubRequest 'pg_database_pool' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database_pool' scope='session' baseid=''>
+              request: <SubRequest 'pg_database_pool' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database_pool' scope='session' baseid=''>
+              request: <SubRequest 'pg_database_pool' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_setup_db' scope='session' baseid='tests'>
+              request: <SubRequest 'pg_setup_db' for <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_database_pool' scope='session' baseid=''>
+              request: <SubRequest 'pg_database_pool' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+          pytest_fixture_post_finalizer [hook]
+              fixturedef: <FixtureDef argname='pg_setup_db' scope='session' baseid='tests'>
+              request: <SubRequest 'pg_setup_db' for <Function test_lookup_column_name[\n            SELECT hero_id FROM hero\n            -name-public.hero.name-text]>>
+          finish pytest_fixture_post_finalizer --> [] [hook]
+        finish pytest_runtest_teardown --> [] [hook]
+        pytest_runtest_makereport [hook]
+            item: <Function test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]>
+            call: <CallInfo when='teardown' result: []>
+        finish pytest_runtest_makereport --> <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='teardown' outcome='passed'> [hook]
+        pytest_runtest_logreport [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='teardown' outcome='passed'>
+          pytest_report_teststatus [hook]
+              report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='teardown' outcome='passed'>
+              config: <_pytest.config.Config object at 0x103b00f90>
+          finish pytest_report_teststatus --> ('', '', '') [hook]
+        finish pytest_runtest_logreport --> [] [hook]
+        pytest_runtest_logfinish [hook]
+            nodeid: tests/test_generate.py::test_lookup_column_name[\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\n            -name-public.kingdom.name-text]
+            location: ('tests/test_generate.py', 21, 'test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]')
+        finish pytest_runtest_logfinish --> [] [hook]
+      finish pytest_runtest_protocol --> True [hook]
+    finish pytest_runtestloop --> True [hook]
+    pytest_sessionfinish [hook]
+        session: <Session psql2py exitstatus=<ExitCode.TESTS_FAILED: 1> testsfailed=2 testscollected=2>
+        exitstatus: 1
+      pytest_terminal_summary [hook]
+          terminalreporter: <_pytest.terminal.TerminalReporter object at 0x1043d3a50>
+          exitstatus: 1
+          config: <_pytest.config.Config object at 0x103b00f90>
+      early skip of rewriting module: pygments [assertion]
+      early skip of rewriting module: pygments [assertion]
+      early skip of rewriting module: pygments [assertion]
+      early skip of rewriting module: pygments [assertion]
+        pytest_report_teststatus [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT hero_id FROM hero\\n            -name-public.hero.name-text]' when='call' outcome='failed'>
+            config: <_pytest.config.Config object at 0x103b00f90>
+        finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+        pytest_report_teststatus [hook]
+            report: <TestReport 'tests/test_generate.py::test_lookup_column_name[\\n            SELECT * FROM kingdom WHERE name = "Candy Kingdom"\\n            -name-public.kingdom.name-text]' when='call' outcome='failed'>
+            config: <_pytest.config.Config object at 0x103b00f90>
+        finish pytest_report_teststatus --> ('failed', 'F', 'FAILED') [hook]
+      finish pytest_terminal_summary --> [] [hook]
+    finish pytest_sessionfinish --> [] [hook]
+    pytest_unconfigure [hook]
+        config: <_pytest.config.Config object at 0x103b00f90>
+    finish pytest_unconfigure --> [] [hook]
