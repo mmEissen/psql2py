@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import dataclasses
-from typing import Iterable, NewType, Type
 import sqlparse
 import re
 import os
@@ -9,11 +8,9 @@ from os import path
 import pathlib
 import jinja2
 import docstring_parser
-import shutil
 
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from psql2py import inspect
 import traceback
 
 SQL_EXTENSION = ".sql"
