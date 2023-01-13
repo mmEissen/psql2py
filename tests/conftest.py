@@ -32,16 +32,20 @@ def setup_db(pg_params: pg_docker.DatabaseParams):
         pass
 
 
+@pytest.fixture
+def data_dir():
+    return DATA_DIR
+
+
 @pytest.fixture(scope="session")
 def pg_setup_db():
     return setup_db
 
 
 @pytest.fixture
-def db_cursor(pg_database: pg_docker.DatabaseParams):
-    cursor = psycopg2.connect(**pg_database.connection_kwargs()).cursor()
+def db_connection(pg_database: pg_docker.DatabaseParams):
+    connection = psycopg2.connect(**pg_database.connection_kwargs())
     try:
-        yield cursor
+        yield connection
     finally:
-        cursor.close()
-        cursor.connection.close()
+        connection.close()

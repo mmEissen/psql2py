@@ -25,7 +25,7 @@ class {{statement.row_name()}}:
 
 @overload
 def {{statement.function_name}}(
-    connection: psycopg2.connection,
+    connection: "psycopg2.connection",
     {%- if statement.args is none %}
     **kwargs: object
     {%- else -%}
@@ -42,7 +42,8 @@ def {{statement.function_name}}(
 def {{statement.function_name}}(connection, **kwargs):
     """{{statement.docstring|indent(4)}}
     """
-    return {{statement.row_name()}}(*core.execute(connection, _{{statement.function_name}}_STATEMENT, **kwargs))
+    for row in core.execute(connection, _{{statement.function_name}}_STATEMENT, kwargs):
+        yield {{statement.row_name()}}(*row)
 
 
 {% endfor -%}
