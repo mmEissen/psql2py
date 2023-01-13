@@ -1,3 +1,3 @@
 /*  */
 
-SELECT * from foo
+SELECT * from foo where bar = 2

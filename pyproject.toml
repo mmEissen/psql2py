@@ -14,6 +14,7 @@ pg-docker = "^0.5.0"
 jinja2 = "^3.1.2"
 docstring-parser = "^0.15"
 watchdog = "^2.2.1"
+pydantic = "^1.10.4"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
@@ -35,5 +36,3 @@ module = [
     "sqlparse",
 ]
 ignore_missing_imports = true
-
-
