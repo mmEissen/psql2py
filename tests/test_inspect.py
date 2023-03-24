@@ -1,24 +1,22 @@
-from psql2py import inspect
+from os import path
+import pytest
+from psql2py import load, inspect
 
 
-pytest_plugins = ["pg_docker"]
+class TestInferTypes:
+    @pytest.fixture
+    def query_path(self, module_data_dir):
+        return path.join(module_data_dir, "query.sql")
 
 
-def test_inspect_database(pg_database):
-    result = inspect.inspect_database(pg_database.connection_kwargs())
+    @pytest.fixture
+    def statement(self, query_path):
+        return load.load_file(query_path)
 
-    assert "public" in result.schemas
-    public = result.schemas["public"]
-    assert public.name == "public"
-    assert "hero" in public.tables
-    assert "kingdom" in public.tables
-    hero = public.tables["hero"]
-    assert hero.name == "hero"
-    assert "hero_id" in hero.columns
-    hero_id = hero.columns["hero_id"]
-    assert hero_id == inspect.Column(
-        name="hero_id",
-        postgres_type="bigint",
-        is_nullable=False,
-    )
 
+    def test_happy_path(self, statement, db_connection, pg_database):
+        result = inspect.infer_types(statement, db_connection)
+
+        assert [arg_type.type_hint() for arg_type in result.arg_types] == ["list[int]", "str"]
+        assert [return_type.pg_name for return_type in result.return_types] == ["kingdom_id", "name"]
+        assert [return_type.type_hint() for return_type in result.return_types] == ["int", "str"]

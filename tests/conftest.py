@@ -32,9 +32,17 @@ def setup_db(pg_params: pg_docker.DatabaseParams):
         pass
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def data_dir():
     return DATA_DIR
+
+
+@pytest.fixture(scope="module")
+def module_data_dir(data_dir, request):
+    module_name, _ = path.splitext(request.node.name)
+    common_path = path.commonprefix(["tests/", module_name])
+    path_from_data_dir = module_name[len(common_path):]
+    return path.join(data_dir, path_from_data_dir)
 
 
 @pytest.fixture(scope="session")

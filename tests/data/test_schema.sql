@@ -7,5 +7,6 @@ CREATE TABLE hero (
 CREATE TABLE kingdom (
     kingdom_id BIGINT PRIMARY KEY,
     name text NOT NULL,
-    ruler BIGINT REFERENCES hero(hero_id)
+    ruler BIGINT REFERENCES hero(hero_id),
+    subjects int
 );

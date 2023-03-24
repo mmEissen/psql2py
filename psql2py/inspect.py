@@ -1,91 +1,72 @@
 from __future__ import annotations
-
 import dataclasses
-import itertools
-from typing import Any
 
 import psycopg2
 
-
-@dataclasses.dataclass
-class Database:
-    schemas: dict[str, Schema] = dataclasses.field(default_factory=dict)
-    search_path = ("public",)
+from psql2py import load, types
 
 
 @dataclasses.dataclass
-class Schema:
-    name: str
-    tables: dict[str, Table] = dataclasses.field(default_factory=dict)
+class StatementTypes:
+    arg_types: list[types.PythonType]
+    return_types: list[ReturnType]
 
-
-@dataclasses.dataclass
-class Table:
-    name: str
-    columns: dict[str, Column] = dataclasses.field(default_factory=dict)
 
 
 @dataclasses.dataclass
-class Column:
-    name: str
-    postgres_type: str
-    is_nullable: bool
+class ReturnType:
+    pg_name: str
+    type_: types.PythonType
+
+    def type_hint(self) -> str:
+        return self.type_.type_hint()
 
 
-@dataclasses.dataclass
-class ColumnResult:
-    table_schema: str
-    table_name: str
-    column_name: str
-    data_type: str
-    is_nullable: str
+def infer_types(statement: load.Statement, db_connection: psycopg2.connection) -> StatementTypes:
+    arg_types = _infer_arg_types(statement, db_connection)
+    return_types = _infer_return_types(statement, db_connection)
 
-
-def inspect_database(connection_params: dict[str, Any]) -> Database:
-    connection = psycopg2.connect(**connection_params)
-    cursor = connection.cursor()
-
-    cursor.execute(
-        """
-        SELECT 
-            table_schema, 
-            table_name, 
-            column_name,
-            data_type,
-            is_nullable
-        FROM information_schema.columns
-        WHERE table_schema NOT IN ('pg_catalog', 'information_schema')
-        ORDER BY table_schema, table_name, column_name
-        """
+    return StatementTypes(
+        arg_types,
+        return_types,
     )
 
-    all_columns = [ColumnResult(*row) for row in cursor.fetchall()]
 
-    return Database(
-        schemas={
-            schema_name: Schema(
-                name=schema_name,
-                tables={
-                    table_name: Table(
-                        name=table_name,
-                        columns={
-                            column.column_name: Column(
-                                name=column.column_name,
-                                postgres_type=column.data_type,
-                                is_nullable=column.is_nullable == "YES",
-                            )
-                            for column in columns_in_table
-                        },
-                    )
-                    for table_name, columns_in_table in itertools.groupby(
-                        columns_in_schema,
-                        key=lambda column_result: column_result.table_name,
-                    )
-                },
-            )
-            for schema_name, columns_in_schema in itertools.groupby(
-                all_columns, key=lambda column_result: column_result.table_schema
-            )
-        },
-    )
+def _infer_arg_types(statement: load.Statement, db_connection: psycopg2.connection) -> list[types.PythonType]:
+    """Use a prepared statement and then query pg_prepared_statements https://www.postgresql.org/docs/current/view-pg-prepared-statements.html"""
+    
+    query = statement.sql
+    for i, arg_name in enumerate(statement.arg_names, start=1):
+        query = query.replace(f"%({arg_name})s", f"${i}")
+    
+    with db_connection.cursor() as cursor:
+        cursor.execute("PREPARE query (unknown) AS " + query)
+        cursor.execute(
+            "SELECT unnest(parameter_types) FROM pg_prepared_statements WHERE name = 'query'"
+        )
+        pg_types = [row[0] for row in cursor.fetchall()]
+        cursor.execute("DEALLOCATE query")
+    return [types.pg_to_py(pg_type) for pg_type in pg_types]
+
+
+def _infer_return_types(statement: load.Statement, db_connection: psycopg2.connection) -> list[ReturnType]:
+    """https://stackoverflow.com/questions/57335039/get-postgresql-resultset-column-types-without-executing-query-using-psycopg2"""
+    with db_connection.cursor() as cursor:
+        cursor.execute(
+            "CREATE OR REPLACE TEMP VIEW infer_return AS " + statement.sql,
+            vars={arg_name: None for arg_name in statement.arg_names}
+        )
+        cursor.execute("""
+            SELECT column_name::text, data_type::text
+            FROM information_schema.columns WHERE table_name = 'infer_return'
+        """)
+        return_types = cursor.fetchall()
+    return [
+        ReturnType(
+            name,
+            types.pg_to_py(return_type),
+        )
+        for name, return_type in return_types
+    ]
+
 
