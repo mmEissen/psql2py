@@ -2,5 +2,4 @@
 
 SELECT * 
 FROM kingdom
-WHERE name = %(kingdom_name)
-AND kingdom_id in %(kingdom_ids)
+WHERE name = %(kingdom_name)s
