@@ -2,27 +2,39 @@ from __future__ import annotations
 import dataclasses
 
 import psycopg2
+import psycopg2.extensions
 
-from psql2py import load, types
+from psql2py import load, types, common
+
+
+class InvalidIdentifierError(Exception):
+    pass
 
 
 @dataclasses.dataclass
 class StatementTypes:
-    arg_types: list[types.PythonType]
+    arg_types: list[common.PythonType]
     return_types: list[ReturnType]
-
 
 
 @dataclasses.dataclass
 class ReturnType:
     pg_name: str
-    type_: types.PythonType
+    type_: common.PythonType
 
     def type_hint(self) -> str:
         return self.type_.type_hint()
+    
+    def imports(self) -> list[str]:
+        return self.type_.imports()
+    
+    def name(self) -> str:
+        if not self.pg_name.isidentifier():
+            raise InvalidIdentifierError()
+        return self.pg_name
 
 
-def infer_types(statement: load.Statement, db_connection: psycopg2.connection) -> StatementTypes:
+def infer_types(statement: load.Statement, db_connection: psycopg2.extensions.connection) -> StatementTypes:
     arg_types = _infer_arg_types(statement, db_connection)
     return_types = _infer_return_types(statement, db_connection)
 
@@ -32,7 +44,7 @@ def infer_types(statement: load.Statement, db_connection: psycopg2.connection) -
     )
 
 
-def _infer_arg_types(statement: load.Statement, db_connection: psycopg2.connection) -> list[types.PythonType]:
+def _infer_arg_types(statement: load.Statement, db_connection: psycopg2.extensions.connection) -> list[common.PythonType]:
     """Use a prepared statement and then query pg_prepared_statements https://www.postgresql.org/docs/current/view-pg-prepared-statements.html"""
     
     query = statement.sql
@@ -49,7 +61,7 @@ def _infer_arg_types(statement: load.Statement, db_connection: psycopg2.connecti
     return [types.pg_to_py(pg_type) for pg_type in pg_types]
 
 
-def _infer_return_types(statement: load.Statement, db_connection: psycopg2.connection) -> list[ReturnType]:
+def _infer_return_types(statement: load.Statement, db_connection: psycopg2.extensions.connection) -> list[ReturnType]:
     """https://stackoverflow.com/questions/57335039/get-postgresql-resultset-column-types-without-executing-query-using-psycopg2"""
     with db_connection.cursor() as cursor:
         cursor.execute(

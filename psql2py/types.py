@@ -1,11 +1,6 @@
+from psql2py import common
+
 import dataclasses
-from typing import Protocol
-
-
-
-class PythonType(Protocol):
-    def type_hint(self) -> str: ...
-    def imports(self) -> list[str]: ...
 
 
 @dataclasses.dataclass(frozen=True)
@@ -22,7 +17,7 @@ class PythonBaseType:
 
 @dataclasses.dataclass(frozen=True)
 class PythonListType:
-    _item_type: PythonType
+    _item_type: common.PythonType
 
     def type_hint(self) -> str:
         return f"list[{self._item_type.type_hint()}]"
@@ -52,7 +47,7 @@ MAPPING = {
 }
 
 
-def pg_to_py(pg_type: str) -> PythonType:
+def pg_to_py(pg_type: str) -> common.PythonType:
     if pg_type.endswith("[]"):
         return PythonListType(pg_to_py(pg_type[:-2]))
     return MAPPING.get(pg_type, PY_OBJECT)
