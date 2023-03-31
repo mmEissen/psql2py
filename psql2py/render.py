@@ -26,6 +26,10 @@ class TypedStatement:
     args: list[common.TypedIdentifier]
     returns: list[common.TypedIdentifier]
 
+    def imports(self) -> list[str]:
+        return sum((type_.imports() for type_ in self.args + self.returns), start=[])
+
+
 
 @dataclasses.dataclass
 class Module:
@@ -123,7 +127,7 @@ def _generate_package(package: Package, output_path: str) -> None:
     for sub_package in package.sub_packages:
         _generate_package(sub_package, package_dir)
     for sub_module in package.sub_modules:
-        _generate_package(sub_module, package_dir)
+        _generate_module(sub_module, package_dir)
 
 
 def _render_module(module: Module) -> str:

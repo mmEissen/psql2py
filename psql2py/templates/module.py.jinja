@@ -1,50 +1,46 @@
-from typing import (
-    Any,
-    Iterable,
-    overload,
-)
-from decimal import decimal
+{% for import_name in module.imports() %}
+import {{ import_name }}
+{% endfor %}
+
 from psql2py import core
 import psycopg2
 import dataclasses
 
 
-{% for statement in statements %}
-_{{statement.function_name}}_STATEMENT = r"""
+{% for statement in module.statements -%}
+
+
+class _{{statement.name}}:
+    _STATEMENT = r"""
 {{statement.sql}}
 """
+    @dataclasses.dataclass
+    class Row:
+        {%- if statement.args|length == 0 %}
+        pass
+        {%- endif -%}
+        {%- for return_ in statement.returns %}
+        {{return_.name()}}: {{return_.type_hint()}}
+        {%- endfor %}
 
-{% if statement.column_types is none -%}
-{{statement.row_name()}} = tuple
-{%- else -%}
-@dataclasses.dataclass
-class {{statement.row_name()}}:
-    {%- for column_type in statement.column_types %}
-    {{column_type.name}}: {{column_type.type_}}
-    {%- endfor -%}
-{%- endif %}
 
-@overload
-def {{statement.function_name}}(
-    connection: "psycopg2.connection",
-    {%- if statement.args is none %}
-    **kwargs: object
-    {%- else -%}
-    {%- if statement.args|length > 0 %}
-    *,
-    {%- for arg in statement.args %}
-    {{arg.name}}: {% if arg.type_ is none -%}Any{%- else -%}{{arg.type_}}{%- endif %},
-    {%- endfor -%}
-    {%- endif -%}
-    {%- endif %}
-) -> Iterable[{{statement.row_name()}}]:
-    ...
+    def __call__(
+        self,
+        {%- if statement.args|length > 0 %}
+        *,
+        {%- endif -%}
+        {%- for arg in statement.args %}
+        {{arg.name()}}: {{return_.type_hint()}}
+        {%- endfor %}
+    ) -> list[Row]:
+        """{{statement.docstring|indent(4)}}"""
+        params = {
+            {%- for arg in statement.args %}
+            "{{arg_name}}": {{arg_name}}
+            {%- endfor %}
+        }
+        return [self.Row(*row) for row in core.execute(self._STATEMENT, params)]
 
-def {{statement.function_name}}(connection, **kwargs):
-    """{{statement.docstring|indent(4)}}
-    """
-    for row in core.execute(connection, _{{statement.function_name}}_STATEMENT, kwargs):
-        yield {{statement.row_name()}}(*row)
-
+{{statement.name}} = _{{statement.name}}()
 
 {% endfor -%}

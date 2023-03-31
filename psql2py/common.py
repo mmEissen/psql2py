@@ -24,7 +24,7 @@ class TypedIdentifier:
         return self._type.type_hint()
     
     def imports(self) -> list[str]:
-        return self.type_.imports()
+        return self._type.imports()
     
     def name(self) -> str:
         return self._name
