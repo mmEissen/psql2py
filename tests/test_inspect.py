@@ -5,8 +5,13 @@ from psql2py import load, inspect
 
 class TestInferTypes:
     @pytest.fixture
-    def query_path(self, module_data_dir):
-        return path.join(module_data_dir, "query.sql")
+    def query_file_name(self):
+        return "query.sql"
+
+
+    @pytest.fixture
+    def query_path(self, query_file_name, module_data_dir):
+        return path.join(module_data_dir, query_file_name)
 
 
     @pytest.fixture
@@ -18,5 +23,15 @@ class TestInferTypes:
         result = inspect.infer_types(statement, db_connection)
 
         assert [arg_type.type_hint() for arg_type in result.arg_types] == ["list[int]", "str"]
-        assert [return_type.pg_name for return_type in result.return_types] == ["kingdom_id", "name"]
+        assert [return_type.name() for return_type in result.return_types] == ["kingdom_id", "name"]
         assert [return_type.type_hint() for return_type in result.return_types] == ["int", "str"]
+
+
+    @pytest.mark.parametrize(
+            "query_file_name", ["select_1.sql"]
+    )
+    def test_no_query_params(self, statement, db_connection, pg_database):
+        result = inspect.infer_types(statement, db_connection)
+
+        assert result.arg_types == []
+        assert [return_type.type_hint() for return_type in result.return_types] == ["int"]

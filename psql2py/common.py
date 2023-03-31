@@ -1,4 +1,9 @@
+import dataclasses
 from typing import Protocol
+
+
+class InvalidIdentifierError(Exception):
+    pass
 
 
 class PythonType(Protocol):
@@ -6,8 +11,26 @@ class PythonType(Protocol):
     def imports(self) -> list[str]: ...
 
 
-class NamedPythonType(Protocol):
-    def type_hint(self) -> str: ...
-    def imports(self) -> list[str]: ...
-    def name(self) -> str: ...
+@dataclasses.dataclass(frozen=True)
+class TypedIdentifier:
+    _name: str
+    _type: PythonType
 
+    def __post_init__(self) -> None:
+        if not self._name.isidentifier():
+            raise InvalidIdentifierError()
+
+    def type_hint(self) -> str:
+        return self._type.type_hint()
+    
+    def imports(self) -> list[str]:
+        return self.type_.imports()
+    
+    def name(self) -> str:
+        return self._name
+
+
+@dataclasses.dataclass
+class StatementTypes:
+    arg_types: list[TypedIdentifier]
+    return_types: list[TypedIdentifier]
