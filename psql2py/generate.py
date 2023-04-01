@@ -1,4 +1,5 @@
 from __future__ import annotations
+import time
 from typing import Callable
 
 from watchdog.observers import Observer
@@ -23,13 +24,16 @@ class _SqlDirChangeEventHandler(FileSystemEventHandler):
 
 
 def package_from_dir_continuous(dirname: str, output_path: str, db_connection_factory: Callable[[],psycopg2.extensions.connection]) -> None:
+    print("Starting filesystem observer...")
     observer = Observer()
     event_handler = _SqlDirChangeEventHandler(dirname, output_path, db_connection_factory)
     observer.schedule(event_handler, dirname, recursive=True)
     observer.start()
 
+    print("Press Ctrl-C to stop.")
     try:
-        input("Press enter to stop")
+        while True:
+            time.sleep(10)
     finally:
         observer.stop()
         observer.join()
