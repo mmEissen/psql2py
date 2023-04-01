@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import re
 
 import psycopg2
 import psycopg2.extensions
@@ -43,8 +44,26 @@ def _infer_arg_types(statement: load.Statement, db_connection: psycopg2.extensio
     ]
 
 
+def _return_type_from_docstring(statement: load.Statement) -> list[common.TypedIdentifier] | None:
+    column_hints = re.match(r"^Columns:\n((\W+(\w+: \w+$))+)", statement.docstring)
+    if not column_hints:
+        return None
+    hints = [hint.strip().split(": ") for hint in column_hints.group(1).split("\n")]
+    return [
+        common.TypedIdentifier(
+            name,
+            types.pg_to_py(pg_type),
+        )
+        for name, pg_type in hints
+    ]
+
+
 def _infer_return_types(statement: load.Statement, db_connection: psycopg2.extensions.connection) -> list[common.TypedIdentifier]:
     """https://stackoverflow.com/questions/57335039/get-postgresql-resultset-column-types-without-executing-query-using-psycopg2"""
+    docstring_hints = _return_type_from_docstring(statement)
+    if docstring_hints is not None:
+        return docstring_hints
+
     with db_connection.cursor() as cursor:
         cursor.execute(
             "CREATE OR REPLACE TEMP VIEW infer_return AS " + statement.sql,

@@ -35,3 +35,14 @@ class TestInferTypes:
 
         assert result.arg_types == []
         assert [return_type.type_hint() for return_type in result.return_types] == ["int"]
+    
+    @pytest.mark.parametrize(
+            "query_file_name", ["insert.sql"]
+    )
+    def test_insert_query_with_hints(self, statement, db_connection, pg_database):
+        result = inspect.infer_types(statement, db_connection)
+
+        assert [arg_type.type_hint() for arg_type in result.arg_types] == ["str"]
+        assert [arg_type.name() for arg_type in result.arg_types] == ["name"]
+        assert [return_type.name() for return_type in result.return_types] == ["kingdom_id"]
+        assert [return_type.type_hint() for return_type in result.return_types] == ["int"]
