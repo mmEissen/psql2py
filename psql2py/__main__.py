@@ -1,6 +1,11 @@
+import os
 from psql2py import generate
 import click
 import psycopg2
+
+
+class InvalidSourceDir(Exception):
+    pass
 
 
 @click.command
@@ -22,7 +27,17 @@ import psycopg2
         "modules on any change."
     )
 )
-def main(daemon: bool, source: str, destination: str, db_host: str, db_port: str, db_name: str, db_user: str, db_password: str) -> None:
+@click.option(
+    "--use-subdir", 
+    is_flag=True, 
+    default=False, 
+    show_default=True, 
+    help=(
+        "If set, the source directory should only contain one subdir. This subdir is used "
+        "as the source for the packages."
+    )
+)
+def main(use_subdir: bool, daemon: bool, source: str, destination: str, db_host: str, db_port: str, db_name: str, db_user: str, db_password: str) -> None:
     db_options = {
         "dbname": db_name,
         "user": db_user,
@@ -30,7 +45,16 @@ def main(daemon: bool, source: str, destination: str, db_host: str, db_port: str
         "host": db_host,
         "port": db_port,
     }
+    print(db_options)
     connection_factory = lambda: psycopg2.connect(**db_options)
+
+    if use_subdir:
+        files = os.listdir(source)
+        dirs = [file_ for file_ in files if os.path.isdir(os.path.join(source, file_))]
+        if len(dirs) != 1:
+            raise InvalidSourceDir()
+        source = os.path.join(source, dirs[0])
+
     if daemon:
         generate.package_from_dir_continuous(source, destination, connection_factory)
     else:
@@ -38,4 +62,4 @@ def main(daemon: bool, source: str, destination: str, db_host: str, db_port: str
 
 
 if __name__ == "__main__":
-    main(auto_envvar_prefix="")
+    main(auto_envvar_prefix="PSQL2PY")

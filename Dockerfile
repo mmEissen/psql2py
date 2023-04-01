@@ -29,4 +29,4 @@ RUN poetry install --only main --no-interaction --no-ansi
 
 VOLUME [ "/input", "/output" ]
 
-ENTRYPOINT [ "python", "-m", "psql2py", "--daemon", "/input", "/output" ]
+ENTRYPOINT [ "python", "-m", "psql2py", "--daemon", "--use-subdir", "/input", "/output" ]

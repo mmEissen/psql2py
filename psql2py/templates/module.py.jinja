@@ -1,15 +1,12 @@
+{{GENERATED_COMMENT}}
 {% for import_name in module.imports() %}
 import {{ import_name }}
 {% endfor %}
-
 from psql2py import core
-import psycopg2
 import dataclasses
 
 
 {% for statement in module.statements -%}
-
-
 class _{{statement.name}}:
     _STATEMENT = r"""
 {{statement.sql}}

@@ -30,11 +30,15 @@ def package_from_dir_continuous(dirname: str, output_path: str, db_connection_fa
     observer.schedule(event_handler, dirname, recursive=True)
     observer.start()
 
+    print("Generating from initial state...")
+    package_from_dir(dirname, output_path, db_connection_factory)
+
     print("Press Ctrl-C to stop.")
     try:
         while True:
-            time.sleep(10)
+            time.sleep(1)
     finally:
+        print("Stopping filesystem observer...")
         observer.stop()
         observer.join()
 

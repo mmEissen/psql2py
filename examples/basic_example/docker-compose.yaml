@@ -21,10 +21,10 @@ services:
       - ./sql:/input:ro
       - .:/output:rw
     environment:
-      - DB_HOST=postgres
-      - DB_PASSWORD=password
-      - DB_USER=example
-      - DB_NAME=example_db
+      - PSQL2PY_DB_HOST=postgres
+      - PSQL2PY_DB_PASSWORD=password
+      - PSQL2PY_DB_USER=example
+      - PSQL2PY_DB_NAME=example_db
     depends_on:
       postgres:
         condition: service_healthy
