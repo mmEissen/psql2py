@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "psql2py-core"
+version = "0.1.0"
+description = ""
+authors = ["Momo Eissenhauer <momo.eissenhauer@gmail.com>"]
+readme = "README.md"
+packages = [{include = "psql2py_core.py"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+psycopg2 = "^2.9.5"
+types-psycopg2 = "^2.9.21.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

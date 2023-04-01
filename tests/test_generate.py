@@ -5,7 +5,8 @@ import tempfile
 import pytest
 
 
-from psql2py import generate, core
+from psql2py import generate
+import psql2py_core as core
 
 
 class TestPackageFromDir:
