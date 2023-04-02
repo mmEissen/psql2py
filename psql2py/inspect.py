@@ -1,11 +1,16 @@
 from __future__ import annotations
-import dataclasses
+import itertools
 import re
 
 import psycopg2
 import psycopg2.extensions
 
 from psql2py import load, types, common
+
+
+_sequence = itertools.count()
+def _unique_int() -> int:
+    return next(_sequence)
 
 
 def infer_types(statement: load.Statement, db_connection: psycopg2.extensions.connection) -> common.StatementTypes:
@@ -65,13 +70,14 @@ def _infer_return_types(statement: load.Statement, db_connection: psycopg2.exten
         return docstring_hints
 
     with db_connection.cursor() as cursor:
+        view_number = _unique_int()
         cursor.execute(
-            "CREATE OR REPLACE TEMP VIEW infer_return AS " + statement.sql,
+            f"CREATE OR REPLACE TEMP VIEW infer_return_{view_number} AS {statement.sql}",
             vars={arg_name: None for arg_name in statement.arg_names}
         )
-        cursor.execute("""
+        cursor.execute(f"""
             SELECT column_name::text, data_type::text
-            FROM information_schema.columns WHERE table_name = 'infer_return'
+            FROM information_schema.columns WHERE table_name = 'infer_return_{view_number}'
         """)
         return_types = cursor.fetchall()
     return [

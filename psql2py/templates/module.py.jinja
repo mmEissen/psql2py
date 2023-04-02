@@ -1,4 +1,3 @@
-{{GENERATED_COMMENT}}
 {% for import_name in module.imports() %}
 import {{ import_name }}
 {% endfor %}
@@ -27,13 +26,13 @@ class _{{statement.name}}:
         *,
         {%- endif -%}
         {%- for arg in statement.args %}
-        {{arg.name()}}: {{return_.type_hint()}}
+        {{arg.name()}}: {{arg.type_hint()}},
         {%- endfor %}
     ) -> list[Row]:
         """{{statement.docstring|indent(4)}}"""
         params = {
             {%- for arg in statement.args %}
-            "{{arg_name}}": {{arg_name}}
+            "{{arg.name()}}": {{arg.name()}},
             {%- endfor %}
         }
         return [self.Row(*row) for row in core.execute(self._STATEMENT, params)]

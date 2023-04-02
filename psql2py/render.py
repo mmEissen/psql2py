@@ -112,6 +112,7 @@ def _generate_module(module: Module, output_path: str) -> None:
     assert path.isdir(output_path)
 
     with open(path.join(output_path, module.file_name()), "w") as module_file:
+        module_file.write(GENERATED_COMMENT + "\n")
         module_file.write(_render_module(module))
 
 
@@ -135,4 +136,4 @@ def _render_module(module: Module) -> str:
         loader=jinja2.PackageLoader("psql2py", "templates"),
     )
     template = env.get_template("module.py.jinja")
-    return template.render({"module": module, "GENERATED_COMMENT": GENERATED_COMMENT})
+    return template.render({"module": module})
