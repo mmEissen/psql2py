@@ -1,7 +1,9 @@
 from psql2py import common
 
 import dataclasses
+import logging
 
+log = logging.getLogger(__name__)
 
 @dataclasses.dataclass(frozen=True)
 class PythonBaseType:
@@ -26,16 +28,19 @@ class PythonListType:
         return self._item_type.imports()
 
 
+PY_NONE = PythonBaseType("None")
 PY_BOOL = PythonBaseType("bool")
 PY_INT = PythonBaseType("int")
 PY_FLOAT = PythonBaseType("float")
 PY_DECIMAL = PythonBaseType("decimal.Decimal", "decimal")
 PY_STR = PythonBaseType("str")
+PY_DATETIME = PythonBaseType("datetime.datetime", "datetime")
 
 PY_OBJECT = PythonBaseType("object")
 
 
 MAPPING = {
+    "null": PY_NONE,
     "boolean": PY_BOOL,
     "real": PY_FLOAT,
     "double": PY_FLOAT,
@@ -44,10 +49,15 @@ MAPPING = {
     "bigint": PY_INT,
     "numeric": PY_DECIMAL,
     "text": PY_STR,
+    "timestamp without time zone": PY_DATETIME,
 }
 
 
 def pg_to_py(pg_type: str) -> common.PythonType:
     if pg_type.endswith("[]"):
         return PythonListType(pg_to_py(pg_type[:-2]))
-    return MAPPING.get(pg_type, PY_OBJECT)
+    try:
+        return MAPPING[pg_type]
+    except KeyError:
+        log.warning("Could not map pg type '%s' to python type", pg_type)
+        return PY_OBJECT
