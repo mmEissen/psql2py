@@ -75,9 +75,11 @@ def _infer_return_types(statement: load.Statement, db_connection: psycopg2.exten
             f"CREATE OR REPLACE TEMP VIEW infer_return_{view_number} AS {statement.sql}",
             vars={arg_name: None for arg_name in statement.arg_names}
         )
+        # Maybe replace this with a query to pg_attribute: https://www.postgresql.org/docs/current/catalog-pg-attribute.html
         cursor.execute(f"""
             SELECT column_name::text, data_type::text
             FROM information_schema.columns WHERE table_name = 'infer_return_{view_number}'
+            ORDER BY ordinal_position
         """)
         return_types = cursor.fetchall()
     return [

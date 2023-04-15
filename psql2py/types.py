@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from psql2py import common
 
 import dataclasses
@@ -15,7 +17,7 @@ class PythonBaseType:
 
     def imports(self) -> list[str]:
         return [self._import] if self._import is not None else []
-    
+
 
 @dataclasses.dataclass(frozen=True)
 class PythonListType:
@@ -26,6 +28,15 @@ class PythonListType:
     
     def imports(self) -> list[str]:
         return self._item_type.imports()
+
+
+@dataclasses.dataclass(frozen=True)
+class PythonUnionType:
+    _left: common.PythonType
+    _right: common.PythonType
+
+    def type_hint(self) -> str:
+        return f"{self._left.type_hint()} | {self._right.type_hint()}"
 
 
 PY_NONE = PythonBaseType("None")
@@ -53,7 +64,9 @@ MAPPING = {
 }
 
 
-def pg_to_py(pg_type: str) -> common.PythonType:
+def pg_to_py(pg_type: str, is_nullable: bool=False) -> common.PythonType:
+    if is_nullable:
+        return PythonUnionType(pg_to_py(pg_type, is_nullable=False), PY_NONE)
     if pg_type.endswith("[]"):
         return PythonListType(pg_to_py(pg_type[:-2]))
     try:
