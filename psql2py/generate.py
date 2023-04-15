@@ -3,8 +3,10 @@ import time
 from typing import Callable
 
 from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from watchdog.events import FileSystemEventHandler, FileSystemEvent
 import traceback
+import checksumdir
+
 
 import psycopg2.extensions
 from psql2py import load, render, inspect
@@ -15,8 +17,16 @@ class _SqlDirChangeEventHandler(FileSystemEventHandler):
         self.root_dir = root_dir
         self.target_dir = target_dir
         self.db_connection_factory = db_connection_factory
+        self._most_recent_checksum = checksumdir.dirhash(self.root_dir)
 
-    def on_any_event(self, event: object) -> None:
+    def on_any_event(self, event: FileSystemEvent) -> None:
+        if event == "opened":
+            return
+        new_checksum = checksumdir.dirhash(self.root_dir)
+        if new_checksum == self._most_recent_checksum:
+            return
+        self._most_recent_checksum = new_checksum
+        print(f"Detected {event.event_type} on {event.src_path}")
         try:
             package_from_dir(self.root_dir, self.target_dir, self.db_connection_factory)
         except Exception:
@@ -24,19 +34,19 @@ class _SqlDirChangeEventHandler(FileSystemEventHandler):
 
 
 def package_from_dir_continuous(dirname: str, output_path: str, db_connection_factory: Callable[[],psycopg2.extensions.connection]) -> None:
+    print("Generating from initial state...")
+    package_from_dir(dirname, output_path, db_connection_factory)
+
     print("Starting filesystem observer...")
     observer = Observer()
     event_handler = _SqlDirChangeEventHandler(dirname, output_path, db_connection_factory)
     observer.schedule(event_handler, dirname, recursive=True)
     observer.start()
 
-    print("Generating from initial state...")
-    package_from_dir(dirname, output_path, db_connection_factory)
-
     print("Press Ctrl-C to stop.")
     try:
-        while True:
-            time.sleep(1)
+        while observer.is_alive():
+            time.sleep(0.1)
     finally:
         print("Stopping filesystem observer...")
         observer.stop()

@@ -33,7 +33,7 @@ class StatementDir:
 
     def __post_init__(self) -> None:
         if not self.name.isidentifier():
-            raise InvalidFileName()
+            raise InvalidFileName(f"The file {self.name} is not a valid identifier")
         if self.statements and self.sub_dirs:
             raise InvalidDirectoryStructure()
 
